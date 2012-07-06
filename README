@@ -1,0 +1,7 @@
+Erlang file monitoring service
+
+The behaviour of this service is inspired by the open source FAM daemon
+([http://oss.sgi.com/projects/fam/]). It allows file system paths to be
+monitored, so that a message will be sent to the client process whenever a
+status change is detected. Currently, the only supported method of detection
+is by regular polling by the server.
