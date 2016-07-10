@@ -1,29 +1,4 @@
-suite=$(if $(SUITE), suite=$(SUITE), )
+PROJECT = file_monitor
+PROJECT_VERSION = 0.1
 
-.PHONY:	all deps check test clean
-
-all: deps
-	./rebar compile
-
-deps:
-	./rebar get-deps
-
-docs:
-	./rebar doc
-
-check:
-	./rebar check-plt
-	./rebar dialyze
-
-test: eunit ct
-
-eunit:
-	./rebar eunit $(suite) skip_deps=true
-
-ct:
-	./rebar ct $(suite) skip_deps=true
-
-clean:
-	./rebar clean
-
-# eof
+include erlang.mk
